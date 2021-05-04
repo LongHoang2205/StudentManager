@@ -30,7 +30,7 @@ export default function (student = initialState, action) {
         addStudent: newStudent,
       };
     case REMOVE_STUDENT:
-      console.log("remove todo:", action.payload);
+      console.log("remove student:", action.payload.item);
       const removeId = action.payload.item.id;
       const removeTodoList = newStudent.filter((x) => {
         if (x.id !== removeId) {
@@ -41,7 +41,6 @@ export default function (student = initialState, action) {
         addStudent: removeTodoList,
       };
     case EDIT_STUDENT:
-      console.log("edit todo", action.payload.item);
       const studentIdEdit = action.payload.item.id;
       const nameEdit = action.payload.name;
       const emailEdit = action.payload.email;

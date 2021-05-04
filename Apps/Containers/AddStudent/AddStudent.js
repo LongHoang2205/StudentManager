@@ -52,6 +52,7 @@ export default function AddStudent({ route, navigation }) {
   };
   const onPressDelete = (item) => {
     dispatch(removeStudent({ item }));
+    navigation.goBack();
   };
   const onPressBack = () => {
     navigation.goBack();
@@ -105,25 +106,25 @@ export default function AddStudent({ route, navigation }) {
       >
         <SMTextInput
           title="Name"
-          placeholder="name"
+          placeholder="enter your name"
           onChangeText={(text) => onChangeTextName(text)}
           value={nameInput}
         />
         <SMTextInput
           title="Email"
-          placeholder="email"
+          placeholder="enter your email"
           onChangeText={(text) => onChangeTextEmail(text)}
           value={emailInput}
         />
         <SMTextInput
           title="Phone"
-          placeholder="phone"
+          placeholder="enter your phone"
           onChangeText={(text) => onChangeTextPhone(text)}
           value={phoneInput}
         />
         <SMTextInput
           title="Gender"
-          placeholder="Gender"
+          placeholder="enter your gender"
           onChangeText={(text) => onChangeTextGender(text)}
           value={genderInput}
         />
@@ -138,7 +139,7 @@ export default function AddStudent({ route, navigation }) {
       <View>
         {titleHeader ? (
           <TouchableOpacity
-            onPress={onPressDelete}
+            onPress={() => onPressDelete(item)}
             style={{ justifyContent: "center", alignItems: "center" }}
           >
             <Text style={{ color: "#727C8E", fontSize: 12 }}>

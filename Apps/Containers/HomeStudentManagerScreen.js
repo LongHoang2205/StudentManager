@@ -19,8 +19,10 @@ import { Images, Colors, Metrics } from "../Themes";
 //redux
 import { useSelector, useDispatch } from "react-redux";
 import { SMStudentList } from "../Components/SMStudentList";
+import { removeStudent } from "../Redux/Actions";
 
 function HomeStudentManagerScreen({ navigation }) {
+  const dispatch = useDispatch();
   const onPressMove = () => {
     navigation.navigate("AddStudent");
   };
@@ -28,6 +30,9 @@ function HomeStudentManagerScreen({ navigation }) {
   const studentData = studentState.addStudent;
   const onPressEdit = (item) => {
     navigation.navigate("AddStudent", { title: "Edit Student", item });
+  };
+  const onPressDelete = (item) => {
+    dispatch(removeStudent({ item }));
   };
   return (
     <SafeAreaView style={styles.container}>
@@ -37,7 +42,7 @@ function HomeStudentManagerScreen({ navigation }) {
         <FlatList
           data={studentData}
           renderItem={({ item, index }) =>
-            SMStudentList(item, index, onPressEdit)
+            SMStudentList(item, index, onPressEdit, onPressDelete)
           }
           keyExtractor={(item, index) => item.id + index}
         />
