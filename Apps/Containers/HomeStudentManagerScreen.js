@@ -18,14 +18,12 @@ import { Images, Colors, Metrics } from "../Themes";
 
 //redux
 import { useSelector, useDispatch } from "react-redux";
-import { removeTodo } from "../Redux/Actions/index";
 import { SMStudentList } from "../Components/SMStudentList";
 
 function HomeStudentManagerScreen({ navigation }) {
   const onPressMove = () => {
     navigation.navigate("AddStudent");
   };
-  const dispatch = useDispatch();
   const studentState = useSelector((state) => state.student);
   const studentData = studentState.addStudent;
   const onPressEdit = (item) => {

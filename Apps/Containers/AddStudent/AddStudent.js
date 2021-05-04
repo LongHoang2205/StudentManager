@@ -129,10 +129,23 @@ export default function AddStudent({ route, navigation }) {
         />
       </View>
       <View>
-        <SMButton text="Add" onPressButton={addStudentPress} />
+        <SMButton
+          text={!titleHeader ? "Add" : "Done Edit"}
+          onPressButton={addStudentPress}
+        />
       </View>
+
       <View>
-        <SMButton text="delete" onPressButton={onPressDelete} />
+        {titleHeader ? (
+          <TouchableOpacity
+            onPress={onPressDelete}
+            style={{ justifyContent: "center", alignItems: "center" }}
+          >
+            <Text style={{ color: "#727C8E", fontSize: 12 }}>
+              Remove Student
+            </Text>
+          </TouchableOpacity>
+        ) : null}
       </View>
     </SafeAreaView>
   );
