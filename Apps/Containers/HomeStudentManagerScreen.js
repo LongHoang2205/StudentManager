@@ -12,28 +12,36 @@ import styles from "../../styles";
 
 // components
 import { SMIconButton, SMHeader, SMButton } from "../Components";
+import { SMStudentList } from "../Components/SMStudentList";
 
 // themes
 import { Images, Colors, Metrics } from "../Themes";
 
 //redux
 import { useSelector, useDispatch } from "react-redux";
-import { SMStudentList } from "../Components/SMStudentList";
 import { removeStudent } from "../Redux/Actions";
 
 function HomeStudentManagerScreen({ navigation }) {
   const dispatch = useDispatch();
+  const studentState = useSelector((state) => state.student);
+  const studentData = studentState.addStudent;
+
+  const onPressTodoList = () => {
+    navigation.navigate("TodoList");
+  };
+
   const onPressMove = () => {
     navigation.navigate("AddStudent");
   };
-  const studentState = useSelector((state) => state.student);
-  const studentData = studentState.addStudent;
+
   const onPressEdit = (item) => {
     navigation.navigate("AddStudent", { title: "Edit Student", item });
   };
+
   const onPressDelete = (item) => {
     dispatch(removeStudent({ item }));
   };
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.contentContainer}>
@@ -47,6 +55,7 @@ function HomeStudentManagerScreen({ navigation }) {
           keyExtractor={(item, index) => item.id + index}
         />
       </View>
+      <SMButton onPressButton={onPressTodoList} text="Get todo list from api" />
       <SMButton onPressButton={onPressMove} text="Add New Student" />
     </SafeAreaView>
   );

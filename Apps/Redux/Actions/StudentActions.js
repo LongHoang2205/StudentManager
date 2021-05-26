@@ -1,4 +1,8 @@
-import { ADD_STUDENT, EDIT_STUDENT, REMOVE_STUDENT } from "./type";
+import {
+  ADD_STUDENT,
+  EDIT_STUDENT,
+  REMOVE_STUDENT,
+} from "../../Constants/ReduxType";
 
 export const addStudent = (payload) => ({
   type: ADD_STUDENT,

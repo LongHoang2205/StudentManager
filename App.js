@@ -10,6 +10,7 @@ import store from "./Apps/Redux/Store/store";
 // Screen
 import HomeStudentManagerScreen from "./Apps/Containers/HomeStudentManagerScreen";
 import AddStudent from "./Apps/Containers/AddStudent/AddStudent";
+import TodoList from "./Apps/Containers/TodoList/TodoList";
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -28,9 +29,7 @@ function HomeStacks() {
         component={HomeStudentManagerScreen}
       />
       <HomeStack.Screen name="AddStudent" component={AddStudent} />
-
-      {/*<HomeStack.Screen name="UserScreen" component={UserScreen} />
-      <HomeStack.Screen name="MessageScreen" component={MessageScreen} /> */}
+      <HomeStack.Screen name="TodoList" component={TodoList} />
     </HomeStack.Navigator>
   );
 }

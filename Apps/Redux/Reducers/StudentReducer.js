@@ -1,5 +1,8 @@
-import { ADD_STUDENT, EDIT_STUDENT, REMOVE_STUDENT } from "../Actions/type";
-import { Images } from "../../Themes";
+import {
+  ADD_STUDENT,
+  EDIT_STUDENT,
+  REMOVE_STUDENT,
+} from "../../Constants/ReduxType";
 
 const initialState = {
   addStudent: [
