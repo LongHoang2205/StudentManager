@@ -30,6 +30,10 @@ function HomeStudentManagerScreen({ navigation }) {
     navigation.navigate("TodoList");
   };
 
+  const onPressInformation = () => {
+    navigation.navigate("ShowInformation");
+  };
+
   const onPressMove = () => {
     navigation.navigate("AddStudent");
   };
@@ -55,6 +59,10 @@ function HomeStudentManagerScreen({ navigation }) {
           keyExtractor={(item, index) => item.id + index}
         />
       </View>
+      <SMButton
+        onPressButton={onPressInformation}
+        text="Get information from api"
+      />
       <SMButton onPressButton={onPressTodoList} text="Get todo list from api" />
       <SMButton onPressButton={onPressMove} text="Add New Student" />
     </SafeAreaView>

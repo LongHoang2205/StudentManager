@@ -4,6 +4,11 @@ import {
   getTodoRequestAction,
   getTodoFailureAction,
 } from "./TodoActions";
+import {
+  getInformationSuccessAction,
+  getInformationRequestAction,
+  getInformationFailureAction,
+} from "./InformationActions";
 
 export {
   addStudent,
@@ -12,4 +17,7 @@ export {
   getTodoSuccessAction,
   getTodoRequestAction,
   getTodoFailureAction,
+  getInformationSuccessAction,
+  getInformationRequestAction,
+  getInformationFailureAction,
 };

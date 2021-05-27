@@ -85,7 +85,7 @@ export default function AddStudent({ route, navigation }) {
     <SafeAreaView style={styles.container}>
       <View style={styles.contentContainer}>
         <SMHeader
-          title={"Add Student"}
+          title={!titleHeader ? "Add Student" : "Edit Student"}
           titleStyle={styles.titleheader}
           leftIconSource={Images.back}
           leftIconPress={onPressBack}
